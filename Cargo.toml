@@ -1,0 +1,16 @@
+[package]
+name = "trex"
+version = "0.1.0"
+authors = ["simbo1905 <simbo1905@60hertz.com>"]
+
+[[bin]]
+doc = false
+name = "trex"
+#path = "src/bin/foo.rs"
+
+[dependencies]
+trexlib = { path = "trexlib" }
+# rust msgpack pickling from serde
+serde = "1.0"
+serde_derive = "1.0"
+rmp-serde = "0.13"
