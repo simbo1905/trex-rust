@@ -11,6 +11,7 @@ This is currently a technical spike
 - [x] some simple tests
 - [x] multimodule workspace
 - [x] tactical pickling
+- [x] extention methods https://github.com/simbo1905/extension_methods
 - [ ] btree journal
 - [ ] tactical networking
 
