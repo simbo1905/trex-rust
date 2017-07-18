@@ -1,26 +1,19 @@
-extern crate trexlib;
+
 extern crate trex;
+extern crate trex_ext;
 
-extern crate serde;
-#[macro_use]
-extern crate serde_derive;
-extern crate rmp_serde as rmps;
-
-use serde::{Deserialize, Serialize};
-use rmps::{Deserializer, Serializer};
-
-use trexlib::lib::BallotNumber;
+use trex::BallotNumber;
+use trex_ext::serde_trex::BallotNumberJSON;
+use trex_ext::serde_trex::JSON;
 
 fn main() {
     
-    let expected = BallotNumber { era: 0, counter: 0, node_identifier: 0};
-    let mut buf = Vec::new();
-    expected.serialize(&mut Serializer::new(&mut buf)).unwrap();
+    let bn = BallotNumberJSON(BallotNumber { era: 0, counter: 1, node_identifier: 2});
 
-    let mut de = Deserializer::new(&buf[..]);
+    let json = "{\"e\":0,\"c\":1,\"n\":2}";
 
-    let round: BallotNumber = Deserialize::deserialize(&mut de).unwrap();
+    println!("the expected is {:?}", bn.to_json());
 
-    println!("the round is {:?}", round);
+    assert_eq!(json,bn.to_json());
 
 }

@@ -1,0 +1,6 @@
+[package]
+name = "trex"
+version = "0.1.0"
+authors = ["simbo1905 <simbo1905@60hertz.com>"]
+
+[dependencies]

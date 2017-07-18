@@ -1,16 +1,19 @@
 [package]
-name = "trex"
+name = "trex-paxos"
 version = "0.1.0"
 authors = ["simbo1905 <simbo1905@60hertz.com>"]
+description = "Trex: An embeddable Paxos engine"
+repository = "https://github.com/simbo1905/trex-rust"
+readme = "README.md"
+keywords = ["Paxos", "consensus", "replication", "cluster"]
+license = "Apache2"
 
 [[bin]]
 doc = false
-name = "trex"
+name = "trex-paxos"
 #path = "src/bin/foo.rs"
 
 [dependencies]
-trexlib = { path = "trexlib" }
-# rust msgpack pickling from serde
-serde = "1.0"
-serde_derive = "1.0"
-rmp-serde = "0.13"
+trex = { path = "trex" }
+trex_ext = { path = "trex_ext" }
+serde_json = "1.0"

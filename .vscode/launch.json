@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Trex",
+            "program": "${workspaceRoot}/target/debug/trex",
+            "args": [],
+            "cwd": "${workspaceRoot}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Unit",
+            "program": "${workspaceRoot}/trex_ext/target/debug/deps/trex_ext-e47dfe3f28c2c890",
+            "args": [],
+            "cwd": "${workspaceRoot}/trex_ext"
+        }
+    ]
+}
